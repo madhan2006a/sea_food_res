@@ -48,7 +48,7 @@ const Navbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 {/* Sun Glow */}
-                <circle cx="20" cy="18" r="10" fill="url(#footer-sun-gradient)" className="animate-logo-pulse" />
+                <circle cx="20" cy="18" r="10" fill="url(#nav-sun-gradient)" className="animate-logo-pulse" />
 
                 {/* Wave Strokes forming abstract A */}
                 <path
@@ -74,7 +74,7 @@ const Navbar = () => {
                 />
 
                 <defs>
-                  <radialGradient id="sun-gradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" transform="translate(20 18) rotate(90) scale(12)">
+                  <radialGradient id="nav-sun-gradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" transform="translate(20 18) rotate(90) scale(12)">
                     <stop stopColor="hsl(var(--sand-gold))" />
                     <stop offset="1" stopColor="hsl(var(--sand-gold))" stopOpacity="0" />
                   </radialGradient>
