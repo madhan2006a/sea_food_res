@@ -58,12 +58,12 @@ const Footer = () => {
                 </svg>
               </div>
               <div className="leading-[1.1]">
-                <p className="text-[hsl(var(--sand-gold))] font-display font-black text-2xl tracking-tight">
+                <p className="text-[hsl(var(--sand-gold))] font-display font-black text-2xl tracking-tight brand-text">
                   அலைகடல்
                 </p>
                 <div className="flex items-center gap-2">
                   <span className="h-[1px] w-3 bg-[hsl(var(--sand-gold)/0.3)]"></span>
-                  <p className="text-white/50 font-body text-[10px] tracking-[0.3em] uppercase font-bold">
+                  <p className="text-white/70 font-body text-[10px] tracking-[0.2em] uppercase font-bold brand-text">
                     உணவகம்
                   </p>
                 </div>

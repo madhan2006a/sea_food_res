@@ -59,47 +59,57 @@ const Home = () => {
         <div className="absolute top-1/4 -right-20 w-96 h-96 bg-[hsl(var(--sand-gold)/0.1)] rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 -right-10 w-64 h-64 bg-[hsl(var(--secondary)/0.15)] rounded-full blur-3xl animate-float" />
 
-        {/* Hero Content - Left Aligned */}
+        {/* Hero Content - Centered on Mobile, Left on Desktop */}
         <div className="container mx-auto px-4 lg:px-12 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-8 animate-fade-slide-up">
               <Star className="w-4 h-4 text-[hsl(var(--sand-gold))]" fill="currentColor" />
-              <span className="text-[hsl(var(--sand-gold))] font-body text-sm font-semibold tracking-wide uppercase">
+              <span className="text-[hsl(var(--sand-gold))] font-body text-[10px] sm:text-xs font-semibold tracking-wide uppercase whitespace-nowrap">
                 Chennai's Finest Coastal Dining
               </span>
             </div>
 
             {/* Restaurant Name - Unique Layout */}
-            <div className="mb-8 space-y-2">
-              <h1 className="font-display font-black text-7xl sm:text-8xl lg:text-9xl text-white leading-none tracking-tight animate-fade-slide-up" style={{ animationDelay: '0.1s' }}>
-                அலைகடல்
-              </h1>
-              <div className="flex items-center gap-4 animate-fade-slide-up" style={{ animationDelay: '0.2s' }}>
-                <div className="h-[2px] w-20 bg-[hsl(var(--sand-gold))]" />
-                <h2 className="font-display font-bold text-3xl sm:text-4xl text-[hsl(var(--sand-gold))] tracking-[0.3em] uppercase">
+            <div className="mb-8 space-y-4 w-full">
+              <div className="flex flex-col gap-2">
+                <h1 className="font-display font-black text-white leading-tight tracking-normal sm:tracking-tight brand-text animate-fade-slide-up"
+                  style={{
+                    fontSize: 'clamp(2.5rem, 12vw, 9rem)',
+                    animationDelay: '0.1s'
+                  }}>
+                  அலைகடல்
+                </h1>
+                <p className="font-body text-[hsl(var(--sand-gold))] text-xs sm:text-sm font-bold tracking-[0.4em] uppercase opacity-80 animate-fade-slide-up" style={{ animationDelay: '0.15s' }}>
+                  Ocean Breeze Dining
+                </p>
+              </div>
+              <div className="flex items-center justify-center lg:justify-start gap-4 animate-fade-slide-up" style={{ animationDelay: '0.2s' }}>
+                <div className="h-[2px] w-12 sm:w-20 bg-white/20" />
+                <h2 className="font-display font-bold text-lg sm:text-3xl text-white/90 tracking-[0.2em] sm:tracking-[0.3em] uppercase brand-text">
                   உணவகம்
                 </h2>
+                <div className="h-[2px] w-12 sm:w-20 bg-white/20 lg:hidden" />
               </div>
             </div>
 
-            <p className="text-white/80 font-body text-xl lg:text-2xl max-w-2xl leading-relaxed mb-12 animate-fade-slide-up" style={{ animationDelay: '0.3s' }}>
+            <p className="text-white/80 font-body text-balance text-lg lg:text-2xl max-w-2xl leading-relaxed mb-12 animate-fade-slide-up" style={{ animationDelay: '0.3s' }}>
               Where the ocean meets tradition — experience <span className="text-white font-semibold">authentic Tamil coastal cuisine</span> crafted with passion and served with warmth.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 animate-fade-slide-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row items-center gap-6 animate-fade-slide-up w-full sm:w-auto" style={{ animationDelay: '0.4s' }}>
               <a
                 href="https://wa.me/917695967955?text=I'm%20interested%20in%20booking%20a%20table%20at%20அலைகடல்%20உணவகம்"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center gap-3 px-10 py-5 rounded-2xl bg-[hsl(var(--sand-gold))] text-[hsl(var(--primary))] font-body font-black text-lg transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--sand-gold)/0.4)] hover:-translate-y-1"
+                className="group relative flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-[hsl(var(--sand-gold))] text-[hsl(var(--primary))] font-body font-black text-lg transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--sand-gold)/0.4)] hover:-translate-y-1 w-full sm:w-auto"
               >
                 <span>Book a Table</span>
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </a>
               <Link
                 to="/menu"
-                className="flex items-center gap-3 px-10 py-5 rounded-2xl bg-white/5 backdrop-blur-md border-2 border-white/20 text-white font-body font-bold text-lg hover:bg-white/10 transition-all duration-300"
+                className="flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-white/5 backdrop-blur-md border-2 border-white/20 text-white font-body font-bold text-lg hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
               >
                 View Our Menu
               </Link>
