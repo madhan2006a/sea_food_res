@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ocean-inspired Design System for அலைகடல் உணவகம் */
+/* All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Ocean Color Palette */
+    --background: 200 30% 98%;
+    --foreground: 210 60% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 10%;
+
+    /* Deep Ocean Blue - primary brand */
+    --primary: 207 80% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Teal - secondary accent */
+    --secondary: 174 65% 38%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted ocean foam */
+    --muted: 200 25% 93%;
+    --muted-foreground: 210 30% 45%;
+
+    /* Teal-light accent */
+    --accent: 174 50% 92%;
+    --accent-foreground: 174 65% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 207 80% 22%;
+
+    --radius: 0.75rem;
+
+    /* Custom ocean tokens */
+    --ocean-deep: 207 80% 22%;
+    --ocean-mid: 199 75% 35%;
+    --ocean-teal: 174 65% 38%;
+    --ocean-teal-light: 174 60% 50%;
+    --ocean-foam: 195 40% 95%;
+    --sand-gold: 38 88% 58%;
+    --sand-light: 38 60% 90%;
+    --coral: 12 85% 60%;
+
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(207, 80%, 22%) 0%, hsl(174, 65%, 38%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(207, 80%, 10%) 0%, hsl(207, 80%, 22%, 0.7) 60%, transparent 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(200, 30%, 97%) 100%);
+    --gradient-wave: linear-gradient(135deg, hsl(207, 80%, 22%) 0%, hsl(199, 75%, 35%) 50%, hsl(174, 65%, 38%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(207, 80%, 22%, 0.08);
+    --shadow-md: 0 8px 24px hsl(207, 80%, 22%, 0.14);
+    --shadow-lg: 0 16px 48px hsl(207, 80%, 22%, 0.20);
+    --shadow-card: 0 4px 20px hsl(174, 65%, 38%, 0.12);
+    --shadow-gold: 0 4px 20px hsl(38, 88%, 58%, 0.30);
+
+    --sidebar-background: 207 80% 15%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 174 65% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 207 60% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 207 60% 28%;
+    --sidebar-ring: 174 65% 38%;
+  }
+
+  .dark {
+    --background: 207 80% 6%;
+    --foreground: 200 30% 95%;
+    --card: 207 70% 10%;
+    --card-foreground: 200 30% 95%;
+    --popover: 207 70% 10%;
+    --popover-foreground: 200 30% 95%;
+    --primary: 174 65% 45%;
+    --primary-foreground: 207 80% 10%;
+    --secondary: 207 60% 20%;
+    --secondary-foreground: 200 30% 95%;
+    --muted: 207 50% 16%;
+    --muted-foreground: 200 20% 65%;
+    --accent: 207 50% 16%;
+    --accent-foreground: 174 65% 60%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 200 30% 95%;
+    --border: 207 50% 20%;
+    --input: 207 50% 20%;
+    --ring: 174 65% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "kern" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+
+  .gradient-wave {
+    background: var(--gradient-wave);
+  }
+
+  .text-gradient-ocean {
+    background: var(--gradient-ocean);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-ocean {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-card-ocean {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+}
+
+/* Wave animation */
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.8);
+  }
+
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes wave-flow-slow {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1.1);
+  }
+
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes float-up {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-wave {
+  animation: wave-flow 8s linear infinite;
+}
+
+.animate-wave-slow {
+  animation: wave-flow-slow 12s linear infinite;
+}
+
+.animate-wave-medium {
+  animation: wave-flow 10s linear infinite;
+}
+
+.animate-wave-fast {
+  animation: wave-flow 7s linear infinite;
+}
+
+.animate-logo-pulse {
+  animation: logo-pulse 3s ease-in-out infinite;
+}
+
+@keyframes logo-pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.animate-float {
+  animation: float-up 4s ease-in-out infinite;
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.8s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(38, 88%, 58%, 0.3), transparent);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Wave SVG divider */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--secondary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
